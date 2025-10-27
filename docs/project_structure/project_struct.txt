@@ -1,0 +1,86 @@
+NTUA-AI_Coursework/
+├── Artificial_Intelligence/
+│   ├── AI_Lab1/
+│   │   ├── AI_Lab1_utils/
+│   │   │   ├── 5.1.png
+│   │   │   ├── 5.2.png
+│   │   │   ├── 5.3.png
+│   │   │   ├── 5.4.png
+│   │   │   └── 5.5.png
+│   │   └── AI_Lab1.txt
+│   ├── AI_Lab2/
+│   │   ├── AI_Lab2_utils/
+│   │   │   ├── db.pl
+│   │   │   ├── movies_metadata.csv
+│   │   │   ├── test_ratings.csv
+│   │   │   └── train_ratings.csv
+│   │   └── AI_Lab2.ipynb
+│   └── README.md
+├── docs/
+│   ├── lecture_slides/
+│   │   ├── AI/
+│   │   │   ├── Διάλεξη 1.pdf
+│   │   │   ├── Διάλεξη 10.pdf
+│   │   │   ├── Διάλεξη 11.pdf
+│   │   │   ├── Διάλεξη 12.pdf
+│   │   │   ├── Διάλεξη 13.pdf
+│   │   │   ├── Διάλεξη 2.pdf
+│   │   │   ├── Διάλεξη 3.pdf
+│   │   │   ├── Διάλεξη 4.pdf
+│   │   │   ├── Διάλεξη 5.pdf
+│   │   │   ├── Διάλεξη 6.pdf
+│   │   │   ├── Διάλεξη 7.pdf
+│   │   │   └── Διαλέξεις 8-9.pdf
+│   │   ├── ML/
+│   │   │   ├── Διάλεξη 1.pdf
+│   │   │   ├── Διάλεξη 10.pdf
+│   │   │   ├── Διάλεξη 11.pdf
+│   │   │   ├── Διάλεξη 12.pdf
+│   │   │   ├── Διάλεξη 13.pdf
+│   │   │   ├── Διάλεξη 2.pdf
+│   │   │   ├── Διάλεξη 3.pdf
+│   │   │   ├── Διάλεξη 4.pdf
+│   │   │   ├── Διάλεξη 5.pdf
+│   │   │   ├── Διάλεξη 6.pdf
+│   │   │   ├── Διάλεξη 7.pdf
+│   │   │   └── Διαλέξεις 8-9.pdf
+│   │   └── NNDL/
+│   │       ├── DL_01 Introduction, Multi Layer Perceptron, Training FNNs.pdf
+│   │       ├── DL_02 Convolutional Neural Networks.pdf
+│   │       ├── DL_03a Autoencoders.pdf
+│   │       ├── DL_03b Representation Learning.pdf
+│   │       ├── DL_03c Word embeddings.pdf
+│   │       ├── DL_04 Recurrent Neural Networks.pdf
+│   │       ├── DL_05 Regularization.pdf
+│   │       ├── DL_06 Attention-Transformers.pdf
+│   │       ├── DL_07 Graph Neural Networks.pdf
+│   │       ├── DL_08 Generative models I (VAEs, GANs).pdf
+│   │       └── DL_09 Generative models II (Diffusion Models).pdf
+│   └── project_structure/
+│       ├── project_struct.py
+│       └── project_struct.txt
+├── Machine_Learning/
+│   ├── ML_Lab1/
+│   │   ├── ML_Lab1_utils/
+│   │   │   ├── test.csv
+│   │   │   └── train-val.csv
+│   │   └── ML_Lab1.ipynb
+│   ├── ML_Lab2/
+│   │   ├── ML_Lab2_utils/
+│   │   │   ├── salinas_image.npy
+│   │   │   └── salinas_labels.npy
+│   │   └── ML_Lab2.ipynb
+│   └── README.md
+├── Neural_Networks_and_Deep_Learning/
+│   ├── DL_Lab1/
+│   │   ├── DL_Lab1_Utils/
+│   │   │   └── utils_link.txt
+│   │   └── DL_Lab1.ipynb
+│   ├── DL_Lab2/
+│   │   └── DL_Lab2.ipynb
+│   └── README.md
+├── .gitignore
+├── LICENSE
+└── README.md
+
+Total directories: 21, Total files: 63
