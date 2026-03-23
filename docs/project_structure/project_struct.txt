@@ -62,26 +62,29 @@ NTUA-AI_Coursework/
 │       └── project_struct.txt
 ├── Image_and_Video_Technology_and_Analysis/
 │   ├── lab1/
-│   │   └── 1st_exercise.pdf
+│   │   ├── 1st_exercise.pdf
+│   │   ├── IVTA_03121026_Peppas_Michael_1.ipynb
+│   │   └── The Laplacian Pyramid as a Compact Image Code.pdf
 │   ├── lab2/
-│   └── lab_material/
-│       ├── lab1/
-│       │   ├── Lab_1_Edges_Detection.ipynb
-│       │   ├── Lab_1_Image_Fundamentals.ipynb
-│       │   ├── Lab_1_Pyramids_Gaussian_Laplacian.ipynb
-│       │   ├── Lab_1_Sampling.ipynb
-│       │   ├── Lab_1_Ιmage_frequency_filters.ipynb
-│       │   └── Lab_1_Ιmage_spatial_filters.ipynb
-│       └── lab2/
-│           ├── Lab_2_CNNImageClassificationTensorflow.ipynb
-│           ├── Lab_2_Corner_Detectors_Harris_ShiTomasi.ipynb
-│           ├── Lab_2_HoG_Descriptor.ipynb
-│           ├── Lab_2_Image_Hough_Otsu.ipynb
-│           ├── Lab_2_ML_HOG.ipynb
-│           ├── Lab_2_ML_ImageClassification.ipynb
-│           ├── Lab_2_ML_ImageClassificationAugmentation.ipynb
-│           ├── Lab_2_SIFT_Descriptor.ipynb
-│           └── Lab_2_Transferlearningwithhub.ipynb
+│   ├── lab_material/
+│   │   ├── lab1/
+│   │   │   ├── Lab_1_Edges_Detection.ipynb
+│   │   │   ├── Lab_1_Image_Fundamentals.ipynb
+│   │   │   ├── Lab_1_Pyramids_Gaussian_Laplacian.ipynb
+│   │   │   ├── Lab_1_Sampling.ipynb
+│   │   │   ├── Lab_1_Ιmage_frequency_filters.ipynb
+│   │   │   └── Lab_1_Ιmage_spatial_filters.ipynb
+│   │   └── lab2/
+│   │       ├── Lab_2_CNNImageClassificationTensorflow.ipynb
+│   │       ├── Lab_2_Corner_Detectors_Harris_ShiTomasi.ipynb
+│   │       ├── Lab_2_HoG_Descriptor.ipynb
+│   │       ├── Lab_2_Image_Hough_Otsu.ipynb
+│   │       ├── Lab_2_ML_HOG.ipynb
+│   │       ├── Lab_2_ML_ImageClassification.ipynb
+│   │       ├── Lab_2_ML_ImageClassificationAugmentation.ipynb
+│   │       ├── Lab_2_SIFT_Descriptor.ipynb
+│   │       └── Lab_2_Transferlearningwithhub.ipynb
+│   └── README.md
 ├── Machine_Learning/
 │   ├── ML_Lab1/
 │   │   ├── ML_Lab1_utils/
@@ -106,4 +109,4 @@ NTUA-AI_Coursework/
 ├── LICENSE
 └── README.md
 
-Total directories: 28, Total files: 79
+Total directories: 28, Total files: 82
