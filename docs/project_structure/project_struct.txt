@@ -66,6 +66,16 @@ NTUA-AI_Coursework/
 │   │   ├── IVTA_03121026_Peppas_Michael_1.ipynb
 │   │   └── The Laplacian Pyramid as a Compact Image Code.pdf
 │   ├── lab2/
+│   │   ├── implementations/
+│   │   │   ├── 1. 7.6. Convolutional Neural Networks (LeNet).txt
+│   │   │   ├── 2. 8.1. Deep Convolutional Neural Networks (AlexNet).txt
+│   │   │   └── 3. 8.2. Networks Using Blocks (VGG).txt
+│   │   ├── papers/
+│   │   │   ├── 1. Handwritten Digit Recognition with a Back-Propagation Network.pdf
+│   │   │   ├── 2. ImageNet Classification with Deep Convolutional Neural Networks.pdf
+│   │   │   └── 3. Very Deep Convolutional Networks for Large-Scale Image Recognition.pdf
+│   │   ├── 2nd_exercise.pdf
+│   │   └── 2nd_exercise_notebook_template.ipynb
 │   ├── lab_material/
 │   │   ├── lab1/
 │   │   │   ├── Lab_1_Edges_Detection.ipynb
@@ -109,4 +119,4 @@ NTUA-AI_Coursework/
 ├── LICENSE
 └── README.md
 
-Total directories: 28, Total files: 82
+Total directories: 30, Total files: 90
