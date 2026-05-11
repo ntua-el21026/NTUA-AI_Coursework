@@ -3,7 +3,7 @@
 **Student:** Michael-Athanasios Peppas (03121026)
 **Institution:** National Technical University of Athens, ECE
 
-This repository includes Google Colab notebooks from three core courses: Artificial Intelligence, Machine Learning, and Neural Networks & Deep Learning. Each course contains two comprehensive lab projects with supporting code and data.
+This repository includes Google Colab notebooks from four NTUA ECE courses: Artificial Intelligence, Machine Learning, Neural Networks & Deep Learning, and Image and Video Technology and Analysis. Each course contains two comprehensive lab projects with supporting code, data, references, and experiment notes.
 
 ---
 
@@ -30,6 +30,13 @@ See `Machine_Learning/README.md` for detailed instructions, key concepts, and re
 
 See `Neural_Networks_and_Deep_Learning/README.md` for detailed instructions, key concepts, and results.
 
+### Image and Video Technology and Analysis
+
+- **Lab 1:** Laplacian pyramid image coding with Gaussian/Laplacian pyramid construction, exact reconstruction, entropy analysis, and quantization experiments.
+- **Lab 2:** CNN image classification on a 20-class CIFAR-100 subset using LeNet, AlexNet, VGG, MyCNN, dropout/data augmentation, VGG19, and EfficientNetB0.
+
+See `Image_and_Video_Technology_and_Analysis/README.md` for detailed instructions, key concepts, and results.
+
 ---
 
 ## Repository Structure
@@ -48,6 +55,13 @@ ntua-ai-coursework/
 │   ├── DL_Lab1/
 │   ├── DL_Lab2/
 │   └── README.md
+├── Image_and_Video_Technology_and_Analysis/
+│   ├── lab1/
+│   ├── lab2/
+│   ├── lab_material/
+│   └── README.md
+├── docs/
+│   └── project_structure/
 ├── LICENSE
 └── README.md
 ```
@@ -57,18 +71,20 @@ ntua-ai-coursework/
 ## Prerequisites
 
 - **Python 3.8+**
-- **Libraries:**
+- **Core Python libraries:**
 
-  ```python
-  pip install numpy pandas matplotlib scikit-learn torch torchvision torchaudio transformers datasets evaluate sentence-transformers tqdm
+  ```bash
+  pip install numpy pandas matplotlib scikit-learn scikit-fuzzy pillow scikit-image tensorflow torch torchvision torchaudio transformers datasets evaluate sentence-transformers tqdm jupyter
   ```
 
-- **SWI-Prolog (v8.x):** required for AI_Lab2
+- **SWI-Prolog (v8.x):** required for `AI_Lab2`
 
-  ```python
+  ```bash
   sudo apt-get install swi-prolog
   pip install pyswip
   ```
+
+Some notebooks download public datasets at runtime. For `DL_Lab1`, download and extract CIFAR-10-C into the path specified by the course README.
 
 ---
 
@@ -83,7 +99,7 @@ ntua-ai-coursework/
 
 2. **Install dependencies** as listed above.
 3. **Explore each course** by opening its `README.md` and running the lab notebooks in Google Colab or Jupyter.
-4. **For DL labs**, download and extract the CIFAR-10-C dataset into the specified utils/data folders.
+4. **Keep lab support folders beside their notebooks** so local imports, data files, PDFs, and saved experiment artifacts resolve correctly.
 
 ---
 

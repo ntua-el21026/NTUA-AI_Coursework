@@ -1,21 +1,18 @@
 # Image and Video Technology and Analysis Lab Projects
 
-**Course:** Image and Video Technology and Analysis (NTUA, Spring 2026)  
+**Course:** Image and Video Technology and Analysis (NTUA, Spring 2026)
 **Student:** Michael-Athanasios Peppas (03121026)
 
 ---
 
 ## Overview
 
-This course folder currently contains one completed end-to-end lab exercise focused on multiscale image representation and image coding with the **Laplacian Pyramid**, along with the supporting course material notebooks for Labs 1 and 2.
+This repository contains two end-to-end lab exercises covering both classical image representation methods and modern CNN-based image classification:
 
-The main project in `lab1/` combines:
+1. **Lab 1:** Laplacian pyramid image coding, exact reconstruction, entropy analysis, and quantization experiments on RGB and grayscale images.
+2. **Lab 2:** CNN image classification on a 20-class CIFAR-100 subset, comparing LeNet, AlexNet, VGG, a custom MyCNN model, regularization strategies, and transfer learning with VGG19 and EfficientNetB0.
 
-1. **Theory review** of Gaussian and Laplacian pyramids, entropy, and quantization based on the paper *The Laplacian Pyramid as a Compact Image Code*.
-2. **Full algorithm implementation** for pyramid construction, decoding, and uniform quantization.
-3. **Experimental evaluation** on both RGB and grayscale images, including entropy analysis, parameter sweeps, and rate-distortion behavior.
-
-The notebook runs in Google Colab or a local Jupyter environment using Python 3.8+, NumPy, pandas, matplotlib, Pillow, and scikit-image.
+All notebooks run in Google Colab or a local Jupyter environment, leveraging Python 3.8+, NumPy, pandas, matplotlib, Pillow, scikit-image, TensorFlow/Keras, and scikit-learn.
 
 ---
 
@@ -24,22 +21,31 @@ The notebook runs in Google Colab or a local Jupyter environment using Python 3.
 ```bash
 Image_and_Video_Technology_and_Analysis/
 ├── lab1/
-│   ├── IVTA_03121026_Peppas_Michael_1.ipynb        # Main notebook: Laplacian pyramid theory, implementation, and experiments
-│   ├── 1st_exercise.pdf                            # Lab assignment statement
+│   ├── IVTA_03121026_Peppas_Michael_1.ipynb
+│   │                                   # Main notebook: Laplacian pyramid theory, implementation, and experiments
+│   ├── 1st_exercise.pdf               # Lab assignment statement
 │   └── The Laplacian Pyramid as a Compact Image Code.pdf
-│                                                   # Reference paper by Burt and Adelson
+│                                       # Reference paper by Burt and Adelson
+├── lab2/
+│   ├── IVTA_03121026_Peppas_Michael_2.ipynb
+│   │                                   # Main notebook: CNN comparison, regularization, and transfer learning
+│   ├── 2nd_exercise.pdf               # Lab assignment statement
+│   ├── 2nd_exercise_notebook_template.ipynb
+│   ├── CNN_Lab_Full_Theory.md         # Theory and oral-exam notes
+│   ├── implementations/               # Reference implementation notes for LeNet, AlexNet, and VGG
+│   └── papers/                        # Reference CNN papers
 ├── lab_material/
-│   ├── lab1/                                       # Instructor notebooks for image fundamentals, filters, pyramids, sampling, edges
-│   └── lab2/                                       # Instructor notebooks for HOG, SIFT, Hough, CNNs, transfer learning
-└── README.md                                       # Project overview and instructions
+│   ├── lab1/                          # Instructor notebooks for fundamentals, filters, pyramids, sampling, edges
+│   └── lab2/                          # Instructor notebooks for HOG, SIFT, Hough/Otsu, CNNs, ML, transfer learning
+└── README.md                          # Project overview and instructions
 ```
 
 ---
 
-## Project 1 - Laplacian Pyramid Image Coding
+## Lab 1 - Laplacian Pyramid Image Coding
 
-**Path:** `lab1/`  
-**Notebook:** `IVTA_03121026_Peppas_Michael_1.ipynb`  
+**Path:** `lab1/`
+**Notebook:** `IVTA_03121026_Peppas_Michael_1.ipynb`
 **Supporting files:** `1st_exercise.pdf`, `The Laplacian Pyramid as a Compact Image Code.pdf`
 
 ### Description
@@ -56,7 +62,7 @@ This lab studies the **Laplacian Pyramid** as both a multiscale image representa
   - Efficient 2D convolution using horizontal and vertical 1D passes.
 - **Exact Reconstruction**
   - Expand-and-sum decoding from the coarsest level back to full resolution.
-  - Careful handling of odd image sizes and boundary conditions with reflect padding.
+  - Handling of odd image sizes and boundary conditions with reflect padding.
 - **Uniform Quantization**
   - Level-wise quantization of Laplacian coefficients.
   - Study of the rate-distortion tradeoff as bin size increases.
@@ -66,9 +72,9 @@ This lab studies the **Laplacian Pyramid** as both a multiscale image representa
 - **Experimental Evaluation**
   - Test images: **Lena (RGB)** and `skimage.data.camera()` (grayscale).
   - Parameter sweeps over:
-    - `a ∈ {0.3, 0.4, 0.5, 0.6, 0.7}`
-    - `depth ∈ {3, 4, 5, 6}`
-    - `bin_size ∈ {4, 16}`
+    - `a in {0.3, 0.4, 0.5, 0.6, 0.7}`
+    - `depth in {3, 4, 5, 6}`
+    - `bin_size in {4, 16}`
 
 ### Implementation Details
 
@@ -104,24 +110,100 @@ This lab studies the **Laplacian Pyramid** as both a multiscale image representa
   - Intermediate levels are mostly optimized near **`a = 0.5`**, showing that entropy-optimal behavior depends on scale.
 - **Quantization tradeoff**
   - **Lena (RGB):**
-    - `bin_size = 4`: `5.770946 → 3.178666 bpp`, `PSNR = 39.45 dB`
-    - `bin_size = 16`: `5.770946 → 0.937192 bpp`, `PSNR = 28.77 dB`
+    - `bin_size = 4`: `5.770946 -> 3.178666 bpp`, `PSNR = 39.45 dB`
+    - `bin_size = 16`: `5.770946 -> 0.937192 bpp`, `PSNR = 28.77 dB`
   - **camera (grayscale):**
-    - `bin_size = 4`: `5.484721 → 3.122948 bpp`, `PSNR = 40.47 dB`
-    - `bin_size = 16`: `5.484721 → 1.303582 bpp`, `PSNR = 29.27 dB`
-  - Smaller bins preserve detail better, while larger bins yield stronger compression with visibly larger artifacts.
+    - `bin_size = 4`: `5.484721 -> 3.122948 bpp`, `PSNR = 40.47 dB`
+    - `bin_size = 16`: `5.484721 -> 1.303582 bpp`, `PSNR = 29.27 dB`
+
+---
+
+## Lab 2 - CNN Image Classification and Transfer Learning
+
+**Path:** `lab2/`
+**Notebook:** `IVTA_03121026_Peppas_Michael_2.ipynb`
+**Supporting files:** `2nd_exercise.pdf`, `CNN_Lab_Full_Theory.md`, `papers/`, `implementations/`
+
+### Description
+
+This lab studies the theory and practice of **Convolutional Neural Networks (CNNs)** for image classification. It first compares the historical design ideas behind LeNet, AlexNet, and VGG, then applies those ideas to a student-specific 20-class CIFAR-100 subset. The implementation evaluates CNNs trained from scratch, regularized versions of a custom model, and ImageNet-pretrained transfer-learning models.
+
+### Key Concepts & Techniques
+
+- **CNN Theory and Architecture Comparison**
+  - Local receptive fields, weight sharing, feature maps, and pooling.
+  - LeNet, AlexNet, and VGG design principles.
+  - Comparative analysis of layers, filter sizes, activations, parameter counts, pooling, dropout, and performance behavior.
+- **Dataset Preparation**
+  - CIFAR-100 fine-label dataset.
+  - Student-specific class subset selected with `team_seed = 26`.
+  - Label remapping from original CIFAR-100 IDs to contiguous labels `0..19`.
+- **Training from Scratch**
+  - Adapted `LeNet`, compact `AlexNet`, compact `VGG`, and custom `MyCNN`.
+  - Common hyperparameter search over optimizer, loss, and batch size.
+  - Final training and evaluation with accuracy, macro-F1, and weighted-F1.
+- **Overfitting Control**
+  - Dropout variants for `MyCNN`.
+  - Light and medium data augmentation.
+  - Train-validation gap analysis.
+- **Transfer Learning**
+  - ImageNet-pretrained `VGG19` and `EfficientNetB0`.
+  - Frozen-base training followed by careful fine-tuning.
+  - Model-specific preprocessing and resizing to `128 x 128 x 3`.
+
+### Implementation Details
+
+- **Languages & Libraries:** Python 3.8+, TensorFlow/Keras, NumPy, pandas, matplotlib, scikit-learn.
+- **Dataset Subset:** 20 CIFAR-100 classes selected by `team_seed = 26`, including bus, chimpanzee, cloud, dinosaur, forest, fox, girl, hamster, lobster, motorcycle, oak_tree, pine_tree, seal, shrew, skunk, snake, sweet_pepper, telephone, tiger, and worm.
+- **Core Components:**
+  - `build_lenet`
+  - `build_alexnet`
+  - `build_vgg`
+  - `build_mycnn`
+  - `MacroF1Callback`
+  - `build_q2_mycnn`
+  - `build_q3_transfer_model`
+  - `set_q3_frozen_base`
+  - `set_q3_finetuning`
+- **Training Setup:**
+  - Best common setup from grid search: Adam optimizer, KL divergence loss, batch size 32, final training for 50 epochs.
+  - Question 2 grid over dropout and augmentation variants.
+  - Question 3 frozen-base training followed by fine-tuning of top pretrained layers.
+
+### Results Highlights
+
+- **Question 1 - CNNs trained from scratch**
+  - `MyCNN` gives the best scratch-trained result:
+    - Test accuracy: `0.6205`
+    - Test macro-F1: `0.6309`
+  - Ranking by test macro-F1: `MyCNN > VGG > AlexNet > LeNet`.
+- **Question 2 - MyCNN regularization**
+  - Best regularized model: `MyCNN_Best_Dropout_Augmentation`.
+    - Dropout: `0.3`
+    - Augmentation: `medium`
+    - Test accuracy: `0.6595`
+    - Test macro-F1: `0.6607`
+    - Overfitting gap: `0.1082`
+  - Data augmentation is more effective than dropout alone in this experiment.
+- **Question 3 - Transfer learning**
+  - Best overall model: fine-tuned `EfficientNetB0`.
+    - Trainable parameters: `1,816,436`
+    - Test accuracy: `0.8710`
+    - Test macro-F1: `0.8702`
+    - Test weighted-F1: `0.8702`
+  - Transfer learning substantially outperforms all models trained from scratch.
 
 ---
 
 ## Reference Material
 
-The `lab_material/` folder contains the instructor-provided notebooks used as supplementary course material. These cover topics such as:
+The `lab_material/` folder contains instructor-provided notebooks used as supplementary course material. These cover:
 
 - image fundamentals and sampling,
 - spatial and frequency filtering,
 - Gaussian and Laplacian pyramids,
 - edge detection,
-- Hough transform,
+- Hough transform and Otsu thresholding,
 - HOG and SIFT descriptors,
 - classical machine learning for image classification,
 - CNN-based image classification and transfer learning.
@@ -134,7 +216,7 @@ The `lab_material/` folder contains the instructor-provided notebooks used as su
 - **Libraries:**
 
   ```bash
-  pip install numpy pandas matplotlib pillow scikit-image jupyter
+  pip install numpy pandas matplotlib pillow scikit-image scikit-learn tensorflow jupyter
   ```
 
 ---
@@ -149,13 +231,11 @@ The `lab_material/` folder contains the instructor-provided notebooks used as su
    ```
 
 2. **Install dependencies** listed above.
-3. **Open the main notebook** in `lab1/` with Jupyter or Google Colab.
-4. **Run cells sequentially** to:
-   - build the Gaussian and Laplacian pyramids,
-   - verify exact reconstruction,
-   - reproduce entropy plots,
-   - and reproduce the quantization experiments.
-5. **Optional:** place a local `lena.png` / `lena.jpg` in the runtime if desired; otherwise the notebook attempts to download Lena automatically.
+3. **Open the lab notebooks** with Jupyter or Google Colab:
+   - `lab1/IVTA_03121026_Peppas_Michael_1.ipynb`
+   - `lab2/IVTA_03121026_Peppas_Michael_2.ipynb`
+4. **Run cells sequentially** and keep each lab's supporting PDFs, theory notes, and material folders in their expected relative paths.
+5. **Optional for Lab 1:** place a local `lena.png` / `lena.jpg` in the runtime if desired; otherwise the notebook attempts to download Lena automatically.
 
 ---
 
